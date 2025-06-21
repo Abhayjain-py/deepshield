@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results - DeepShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>DeepShield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="results-main">
+        <div class="container">
+            <div class="results-header">
+                <button class="back-btn" onclick="history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Upload
+                </button>
+                <h1>Detection Results</h1>
+            </div>
+
+            <div class="results-container">
+                <div class="media-preview">
+                    <div class="media-container" id="mediaContainer">
+                        <!-- Media will be displayed here -->
+                    </div>
+                    <div class="media-info">
+                        <h3 id="fileName">Loading...</h3>
+                        <p id="fileSize">Analyzing file...</p>
+                    </div>
+                </div>
+
+                <div class="detection-results">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-icon" id="resultIcon">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="result-status">
+                                <h2 id="detectionResult">Analyzing...</h2>
+                                <p id="confidenceScore">Please wait while we analyze your media</p>
+                            </div>
+                        </div>
+                        
+                        <div class="confidence-meter" id="confidenceMeter" style="display: none;">
+                            <div class="meter-label">Confidence Level</div>
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="meterFill"></div>
+                            </div>
+                            <div class="meter-percentage" id="meterPercentage">0%</div>
+                        </div>
+
+                        <div class="result-details" id="resultDetails" style="display: none;">
+                            <h3>Analysis Details</h3>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <span class="detail-label">Processing Time</span>
+                                        <span class="detail-value" id="processingTime">2.3 seconds</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-eye"></i>
+                                    <div>
+                                        <span class="detail-label">Detection Method</span>
+                                        <span class="detail-value">Neural Network Analysis</span>
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <span class="detail-label">Security Level</span>
+                                        <span class="detail-value">Enterprise Grade</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons" id="actionButtons" style="display: none;">
+                        <button class="action-btn primary" id="fileComplaintBtn">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            File Complaint
+                        </button>
+                        <button class="action-btn secondary" id="downloadReportBtn">
+                            <i class="fas fa-download"></i>
+                            Download Report
+                        </button>
+                        <button class="action-btn secondary" id="analyzeAnotherBtn">
+                            <i class="fas fa-plus"></i>
+                            Analyze Another
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations" id="recommendations" style="display: none;">
+                <h3>Recommended Actions</h3>
+                <div class="recommendation-cards">
+                    <div class="recommendation-card deepfake" id="deepfakeRecommendation" style="display: none;">
+                        <div class="rec-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="rec-content">
+                            <h4>Deepfake Detected</h4>
+                            <p>This media appears to be artificially generated or manipulated. Consider filing a complaint if this content is being used maliciously.</p>
+                            <ul>
+                                <li>Document the source where you found this content</li>
+                                <li>Save screenshots or additional evidence</li>
+                                <li>Report to relevant authorities if needed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendation-card authentic" id="authenticRecommendation" style="display: none;">
+                        <div class="rec-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="rec-content">
+                            <h4>Media Appears Authentic</h4>
+                            <p>Our analysis suggests this media is likely genuine. However, always remain vigilant about digital content.</p>
+                            <ul>
+                                <li>Continue monitoring for suspicious content</li>
+                                <li>Report any concerns to appropriate authorities</li>
+                                <li>Stay informed about deepfake technology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

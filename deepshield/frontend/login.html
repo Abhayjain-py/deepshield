@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DeepShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>DeepShield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="login.html" class="nav-link active">Login</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-shield-alt login-icon"></i>
+                    <h1>Secure Login</h1>
+                    <p>Enter your email to receive a verification code</p>
+                </div>
+
+                <div class="login-form" id="emailForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <button type="button" class="login-btn" id="sendOtpBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Verification Code
+                    </button>
+                </div>
+
+                <div class="otp-form" id="otpForm" style="display: none;">
+                    <div class="form-group">
+                        <label for="otp">Verification Code</label>
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-input" maxlength="1" data-index="0">
+                            <input type="text" class="otp-input" maxlength="1" data-index="1">
+                            <input type="text" class="otp-input" maxlength="1" data-index="2">
+                            <input type="text" class="otp-input" maxlength="1" data-index="3">
+                            <input type="text" class="otp-input" maxlength="1" data-index="4">
+                            <input type="text" class="otp-input" maxlength="1" data-index="5">
+                        </div>
+                        <p class="otp-info">Enter the 6-digit code sent to <span id="emailDisplay"></span></p>
+                    </div>
+                    <button type="button" class="login-btn" id="verifyOtpBtn">
+                        <i class="fas fa-check"></i>
+                        Verify & Login
+                    </button>
+                    <button type="button" class="resend-btn" id="resendOtpBtn">
+                        <i class="fas fa-redo"></i>
+                        Resend Code
+                    </button>
+                </div>
+
+                <div class="login-status" id="loginStatus"></div>
+
+                <div class="login-footer">
+                    <p>By logging in, you agree to our <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a></p>
+                </div>
+            </div>
+
+            <div class="login-features">
+                <h3>Why Choose DeepShield?</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i>
+                        <div>
+                            <h4>Secure Authentication</h4>
+                            <p>OTP-based login ensures your account stays protected</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <h4>Advanced Detection</h4>
+                            <p>State-of-the-art AI algorithms detect deepfakes with 99%+ accuracy</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-gavel"></i>
+                        <div>
+                            <h4>Legal Support</h4>
+                            <p>Direct connection to cybercrime authorities for quick action</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

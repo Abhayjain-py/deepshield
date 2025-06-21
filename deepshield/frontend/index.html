@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepShield - AI-Powered Deepfake Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>DeepShield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Protect Yourself from <span class="highlight">Deepfakes</span></h1>
+                <p class="hero-subtitle">Advanced AI-powered detection to identify manipulated media and help you take action against digital impersonation.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">99.2%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10M+</span>
+                        <span class="stat-label">Files Analyzed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Protection</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="detection-preview">
+                    <i class="fas fa-eye"></i>
+                    <div class="scan-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upload-section">
+            <div class="container">
+                <h2 class="section-title">Upload Media for Analysis</h2>
+                <p class="section-subtitle">Upload images or videos to detect potential deepfake manipulation</p>
+                
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drag & Drop your files here</h3>
+                        <p>or <span class="upload-link">browse files</span></p>
+                        <p class="upload-info">Supports: JPG, PNG, MP4, WebM, AVI (Max 50MB)</p>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*,video/*" style="display: none;">
+                </div>
+
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Uploading... 0%</p>
+                </div>
+
+                <button class="analyze-btn" id="analyzeBtn" disabled>
+                    <i class="fas fa-search"></i>
+                    Analyze Media
+                </button>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">How DeepShield Protects You</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Detection</h3>
+                        <p>Advanced neural networks analyze facial movements, lighting inconsistencies, and digital artifacts to identify deepfakes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Legal Support</h3>
+                        <p>File complaints directly through our platform and get connected with cybercrime authorities for immediate action.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>Your data is encrypted and processed securely. We never store your media files longer than necessary for analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Protect Yourself?</h2>
+                <p>Join thousands of users who trust DeepShield to detect and report deepfake content.</p>
+                <a href="login.html" class="cta-btn">Get Started Today</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>DeepShield</span>
+                    </div>
+                    <p>Protecting digital identity through advanced AI detection technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#report">Report Issue</a></li>
+                        <li><a href="#cybercrime">Cybercrime Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DeepShield. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

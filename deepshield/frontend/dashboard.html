@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DeepShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>DeepShield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+            </ul>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="user-email" id="userEmail">user@example.com</span>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Your Dashboard</h1>
+                <p>Monitor your uploaded media and complaint status</p>
+                <div class="quick-actions">
+                    <button class="action-btn primary" onclick="window.location.href='index.html'">
+                        <i class="fas fa-upload"></i>
+                        Upload Media
+                    </button>
+                    <button class="action-btn secondary" onclick="window.location.href='complaint.html'">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        File Complaint
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalUploads">0</h3>
+                        <p>Media Analyzed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="deepfakeCount">0</h3>
+                        <p>Deepfakes Detected</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="complaintCount">0</h3>
+                        <p>Complaints Filed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="protectionScore">98%</h3>
+                        <p>Protection Score</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Recent Media Analysis</h2>
+                        <div class="section-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="deepfake">Deepfakes</button>
+                            <button class="filter-btn" data-filter="authentic">Authentic</button>
+                        </div>
+                    </div>
+                    
+                    <div class="media-grid" id="mediaGrid">
+                        <div class="loading-state" id="mediaLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading your media analysis...</p>
+                        </div>
+                        <div class="empty-state" id="mediaEmpty" style="display: none;">
+                            <i class="fas fa-image"></i>
+                            <h3>No Media Analyzed Yet</h3>
+                            <p>Upload your first image or video to get started</p>
+                            <button class="upload-btn" onclick="window.location.href='index.html'">
+                                <i class="fas fa-upload"></i>
+                                Upload Media
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>Complaint History</h2>
+                        <div class="section-actions">
+                            <button class="action-btn secondary" onclick="window.location.href='complaint.html'">
+                                <i class="fas fa-plus"></i>
+                                New Complaint
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="complaints-list" id="complaintsList">
+                        <div class="loading-state" id="complaintsLoading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading your complaints...</p>
+                        </div>
+                        <div class="empty-state" id="complaintsEmpty" style="display: none;">
+                            <i class="fas fa-gavel"></i>
+                            <h3>No Complaints Filed Yet</h3>
+                            <p>File your first complaint to get help with deepfake content</p>
+                            <button class="complaint-btn" onclick="window.location.href='complaint.html'">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                File Complaint
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="detailModal" style="display: none;">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 id="modalTitle">Media Details</h3>
+                <button class="modal-close" id="modalCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn secondary" id="downloadReportBtn">
+                    <i class="fas fa-download"></i>
+                    Download Report
+                </button>
+                <button class="modal-btn primary" id="reportToCyberCellBtn">
+                    <i class="fas fa-flag"></i>
+                    Report to Cyber Cell India
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
